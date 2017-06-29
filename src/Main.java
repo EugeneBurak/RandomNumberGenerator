@@ -4,9 +4,15 @@ public class Main {
 
     static Random rnd = new Random();
     static int random(int n) {
-//        return Math.abs(rnd.nextInt()) % n;           // Неправильно, хотя встречается часто
+//        return Math.abs(rnd.nextInt()) % n;           // Wrong, although it occurs often
 
         /*
+        A good method, but it is imperfect: it has three drawbacks.
+    The first is that if n is a small power of two, then the sequence of generated random numbers in a very short period will begin
+     repeat. The second is that if n is not a power of two, then on average some Numbers will be obtained much more often than others.
+     If n is large, the indicated deficiency can be manifested rather clearly.
+     Graphically this is demonstrated by the following program:
+
     Неплохой метод, но он несовершенен: у него есть три недостатка.
     Первый состоит в том, что если n - это небольшая степень числа два, то последовательность генерируемых случайных чисел через очень короткий период начнет
      повторяться. Второй заключается в том, что если n не является степенью числа два', то в среднем некоторые Числа будут получаться гораздо чаще других.
